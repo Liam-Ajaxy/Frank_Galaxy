@@ -1,13 +1,5 @@
 import { DEFAULT_BACKGROUND_DATA_URL } from "../../assets/background.js";
 
-/* ============================================================
-   WALLPAPERS
-   "default" is the bundled image — always guaranteed to work
-   and used as the fallback if any remote wallpaper 404s or is
-   left unset below. Paste real direct image links (ending in
-   .jpg/.png) into the `url` field of the other entries — leave
-   as null to skip a slot safely until you have one.
-   ============================================================ */
 export const WALLPAPERS = [
   { id: "default", name: "Frank Galaxy", url: null },
   { id: "milkyway-1", name: "Stars Space Galaxy", url: "https://wallpaperbat.com/img/66623243-stars-space-galaxy-4k-ultra-hd-wallpaper.jpg" },

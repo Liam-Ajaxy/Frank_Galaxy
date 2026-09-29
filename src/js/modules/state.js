@@ -1,26 +1,16 @@
-/* ============================================================
-   APP STATE
-   A single mutable object shared across modules via import.
-   No module reaches into another module's local variables —
-   everything goes through here or through DOM refs (dom.js).
-   ============================================================ */
 export const state = {
-  // drawer
-  sort: "name",       // name | recent | category  (recent unused currently, kept for parity)
+  sort: "name",
   category: "All",
   query: "",
   drawerOpen: false,
 
-  // detail sheet
   detailOpen: false,
 
-  // mobile panel track
-  mobilePanel: "clock", // welcome | clock | widgets
+  mobilePanel: "clock",
 
-  // settings
-  theme: "system",      // dark | light | system
+  theme: "system",
   brightness: 100,
-  wallpaperId: null,     // null = not yet chosen -> randomize on first load
+  wallpaperId: null,
   settingsOpen: false
 };
 
@@ -37,13 +27,13 @@ export function loadPrefs(){
         if(p.category) state.category = p.category;
       }
     }
-  }catch(e){ /* storage unavailable — defaults hold */ }
+  }catch(e){  }
 }
 
 export function savePrefs(){
   try{
     localStorage.setItem(PREFS_KEY, JSON.stringify({ sort: state.sort, category: state.category }));
-  }catch(e){ /* ignore */ }
+  }catch(e){  }
 }
 
 export function loadSettings(){
@@ -55,7 +45,7 @@ export function loadSettings(){
       if(typeof s.brightness === "number") state.brightness = s.brightness;
       if(s.wallpaperId) state.wallpaperId = s.wallpaperId;
     }
-  }catch(e){ /* defaults hold */ }
+  }catch(e){  }
 }
 
 export function saveSettings(){
@@ -63,5 +53,5 @@ export function saveSettings(){
     localStorage.setItem(SETTINGS_KEY, JSON.stringify({
       theme: state.theme, brightness: state.brightness, wallpaperId: state.wallpaperId
     }));
-  }catch(e){ /* ignore */ }
+  }catch(e){  }
 }

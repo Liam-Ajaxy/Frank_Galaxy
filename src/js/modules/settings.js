@@ -8,7 +8,6 @@ import {
 
 const systemDarkQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-/* ---- panel open/close ---- */
 export function openSettings(){
   state.settingsOpen = true;
   settingsPanel.classList.add("open");
@@ -27,7 +26,6 @@ export function closeSettings(){
   settingsOpenerBtn.setAttribute("aria-expanded", "false");
 }
 
-/* ---- theme ---- */
 function effectiveGlassMode(){
   if(state.theme === "system") return systemDarkQuery.matches ? "dark" : "light";
   return state.theme;
@@ -45,7 +43,6 @@ function applyTheme(){
   }
 }
 
-/* ---- brightness ---- */
 function applyBrightness(){
   const pct = state.brightness;
   brightnessSlider.value = pct;
@@ -57,7 +54,6 @@ function applyBrightness(){
   brightnessOverlay.style.opacity = dim.toFixed(3);
 }
 
-/* ---- wallpaper ---- */
 function pickRandomWallpaperId(){
   const usable = WALLPAPERS.filter(w => w.id === "default" || w.url);
   const pick = usable[Math.floor(Math.random() * usable.length)];
@@ -92,7 +88,6 @@ function renderWallpaperGrid(){
   `).join("");
 }
 
-/* ---- events ---- */
 export function initSettingsEvents(){
   settingsOpenerBtn.addEventListener("click", () => state.settingsOpen ? closeSettings() : openSettings());
   settingsScrim.addEventListener("click", closeSettings);

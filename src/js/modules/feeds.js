@@ -1,7 +1,3 @@
-/* ============================================================
-   FEEDS — network + normalisation only. No DOM in here.
-   fetchPulse() resolves to a flat, display-ready item array.
-   ============================================================ */
 import { PULSE_CONFIG as C, STOCKS, CRYPTO, ENDPOINTS as E } from "../data/feeds.js";
 
 async function getJSON(url){
@@ -25,7 +21,6 @@ async function getViaProxy(url){
 const safeUrl = u => (typeof u === "string" && /^https?:\/\//i.test(u)) ? u : null;
 const values = results => results.filter(r => r.status === "fulfilled").flatMap(r => r.value);
 
-/* ---------- quotes ---------- */
 async function fetchStock({ symbol, label, index }){
   const data = await getViaProxy(E.yahooChart(symbol));
   const m = data?.chart?.result?.[0]?.meta;
@@ -55,7 +50,6 @@ async function fetchCrypto(){
   }));
 }
 
-/* ---------- news ---------- */
 async function fetchHackerNews(){
   const ids = await getJSON(E.hnTop);
   const items = await Promise.all(
@@ -85,7 +79,6 @@ async function fetchSpaceNews(){
     }));
 }
 
-/* ---------- composition ---------- */
 function interleave(a, b){
   const out = [];
   for(let i = 0; i < Math.max(a.length, b.length); i++){

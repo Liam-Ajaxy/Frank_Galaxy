@@ -19,7 +19,6 @@
 </head>
 <body>
 
-<!-- BOOT SCREEN — visible until bg image finishes decoding -->
 <div id="boot">
   <div class="boot-ring" aria-hidden="true"></div>
   <div class="boot-mark"><span class="boot-word">FRANK GALAXY</span></div>
@@ -28,7 +27,6 @@
 <div id="app">
   <div id="bg" role="img" aria-label="Deep space nebula with Earth"></div>
 
-  <!-- ============ HEADER ============ -->
   <header id="header">
     <div id="logo-pill" class="glass glass-pill">
       <span class="logo-glyph" aria-hidden="true"></span>
@@ -36,11 +34,9 @@
     </div>
   </header>
 
-  <!-- ============ STAGE (home content) ============ -->
   <main id="stage">
     <div id="home">
 
-      <!-- ---------- DESKTOP / WIDE GRID ---------- -->
       <div class="desktop-grid">
         <div class="col-side col-left">
           <div class="welcome-stack">
@@ -65,7 +61,6 @@
         </div>
       </div>
 
-      <!-- ---------- MOBILE / SWIPE TRACK ---------- -->
       <div class="mobile-track" id="mobile-track">
         <div class="mobile-panel" id="panel-welcome" data-panel="welcome">
           <div class="welcome-stack">
@@ -90,7 +85,6 @@
 
     </div>
 
-    <!-- gesture hints -->
     <div class="hint" id="hint-drawer">
       <svg class="hint-arrow up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
       <span>Swipe up for apps</span>
@@ -102,17 +96,14 @@
     </div>
   </main>
 
-  <!-- ============ SETTINGS OPENER ============ -->
   <button id="settings-opener" class="glass glass-pill" aria-label="Open settings" aria-expanded="false">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
   </button>
 
-  <!-- ============ DRAWER OPENER ============ -->
   <button id="drawer-opener" class="glass glass-pill" aria-label="Open app drawer" aria-expanded="false">
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="2" fill="currentColor"/><circle cx="12" cy="6" r="2" fill="currentColor"/><circle cx="18" cy="6" r="2" fill="currentColor"/><circle cx="6" cy="12" r="2" fill="currentColor"/><circle cx="12" cy="12" r="2" fill="currentColor"/><circle cx="18" cy="12" r="2" fill="currentColor"/><circle cx="6" cy="18" r="2" fill="currentColor"/><circle cx="12" cy="18" r="2" fill="currentColor"/><circle cx="18" cy="18" r="2" fill="currentColor"/></svg>
   </button>
 
-  <!-- ============ APP DRAWER ============ -->
   <div id="drawer" aria-hidden="true">
     <div id="drawer-scrim"></div>
     <div id="drawer-sheet" class="glass-strong" role="dialog" aria-label="App drawer" aria-modal="true">
@@ -145,10 +136,8 @@
     </div>
   </div>
 
-  <!-- ============ BRIGHTNESS OVERLAY ============ -->
   <div id="brightness-overlay" aria-hidden="true"></div>
 
-  <!-- ============ SETTINGS PANEL ============ -->
   <div id="settings-scrim"></div>
   <div id="settings-panel" class="glass-strong glass-lg" role="dialog" aria-label="Settings" aria-hidden="true">
     <div id="settings-inner">
@@ -195,7 +184,6 @@
     </div>
   </div>
 
-  <!-- ============ APP DETAIL SHEET ============ -->
   <div id="detail" aria-hidden="true">
     <div id="detail-scrim"></div>
     <div id="detail-card" class="glass-strong glass-lg" role="dialog" aria-modal="true" aria-labelledby="detail-name">
@@ -217,9 +205,6 @@
 
 </div>
 
-<!-- ============================================================
-     ICON LIBRARY — inline SVG defs, reused by id via <use>
-     ============================================================ -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
 <defs>
 

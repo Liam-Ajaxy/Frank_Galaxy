@@ -1,7 +1,3 @@
-/* ============================================================
-   DOM REFERENCES
-   Queried once, shared everywhere. Import only what you need.
-   ============================================================ */
 export const bootEl = document.getElementById("boot");
 export const appEl = document.getElementById("app");
 export const bgEl = document.getElementById("bg");

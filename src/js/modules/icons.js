@@ -1,9 +1,3 @@
-/* ============================================================
-   ICON RENDERING
-   Shared by widgets, drawer grid, and the detail sheet. Real
-   marks render via <symbol> or <img>; anything without a real
-   icon yet shows the explicit placeholder glyph.
-   ============================================================ */
 export function iconInnerHTML(app){
   if(app.iconType === "img" && app.icon){
     return `<img src="${app.icon}" alt="" loading="eager">`;

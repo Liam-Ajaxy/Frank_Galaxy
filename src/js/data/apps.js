@@ -1,10 +1,3 @@
-/* ============================================================
-   APP DATA
-   Real links as provided. Anything marked pending has no live
-   URL/icon yet — the UI shows it truthfully as "coming soon"
-   rather than faking a link, and uses the placeholder glyph
-   rather than a fake brand icon.
-   ============================================================ */
 export const APPS = [
   {
     id: "hia-exe",

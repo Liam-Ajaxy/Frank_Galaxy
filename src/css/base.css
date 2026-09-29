@@ -19,9 +19,6 @@ body{
 
 button{ font-family: inherit; color: inherit; }
 
-/* ============================================================
-   BOOT / LOADER
-   ============================================================ */
 #boot{
   position: fixed; inset: 0;
   background: #050510;
@@ -56,9 +53,6 @@ button{ font-family: inherit; color: inherit; }
   .boot-ring{ animation-duration: 2.4s; }
 }
 
-/* ============================================================
-   ROOT SHELL + BACKGROUND
-   ============================================================ */
 #app{
   position: fixed; inset: 0;
   opacity: 0;

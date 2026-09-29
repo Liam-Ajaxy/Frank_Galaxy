@@ -1,6 +1,3 @@
-/* ============================================================
-   VIEWPORT / PANEL TRACK
-   ============================================================ */
 #home{
   position: absolute; inset: 0;
   display: grid;
@@ -36,9 +33,6 @@
   .mobile-track{ display: block; }
 }
 
-/* ============================================================
-   DEPTH / FOCUS FILTER
-   ============================================================ */
 #home, #header, #drawer-opener{
   transition: filter 0.55s var(--ease-glass), opacity 0.55s var(--ease-glass), transform 0.55s var(--ease-glass);
   filter: blur(0px) saturate(100%);

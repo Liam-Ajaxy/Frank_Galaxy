@@ -1,7 +1,3 @@
-/* ============================================================
-   LIVE PULSE — renders the auto-scrolling stocks + news card
-   into the desktop and mobile mount points.
-   ============================================================ */
 import { PULSE_CONFIG as C } from "../data/feeds.js";
 import { pulseMountD, pulseMountM } from "./dom.js";
 import { fetchPulse } from "./feeds.js";
@@ -22,7 +18,6 @@ let timer = null;
 let busy = false;
 let lastOk = 0;
 
-/* ---------- helpers ---------- */
 const esc = s => String(s).replace(/[&<>"']/g, c =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
@@ -43,7 +38,6 @@ function fmtChange(ch){
   return { cls, text: `${arrow} ${Math.abs(ch).toFixed(2)}%` };
 }
 
-/* ---------- markup ---------- */
 function itemHTML(item, dupe){
   const li = `class="pulse-item${dupe ? " pulse-dupe" : ""}"${dupe ? ' aria-hidden="true"' : ""}`;
   const a = `class="pulse-link" href="${esc(item.url)}" target="_blank" rel="noopener noreferrer"${dupe ? ' tabindex="-1"' : ""}`;
@@ -63,7 +57,6 @@ function itemHTML(item, dupe){
   </a></li>`;
 }
 
-/* ---------- view updates ---------- */
 function setStatus(state, label){
   views.forEach(v => {
     v.dot.className = `pulse-dot is-${state}`;
@@ -72,7 +65,6 @@ function setStatus(state, label){
 }
 
 function render(items){
-  // list is rendered twice; the second copy makes the -50% loop seamless
   const html = items.map(i => itemHTML(i, false)).join("") + items.map(i => itemHTML(i, true)).join("");
   const dur = `${Math.max(40, items.length * 5)}s`;
   views.forEach(v => {
@@ -89,19 +81,17 @@ function renderEmpty(msg){
   });
 }
 
-/* ---------- cache ---------- */
 function readCache(){
   try{
     const c = JSON.parse(localStorage.getItem(C.cacheKey));
     if(c && Array.isArray(c.items) && c.items.length && Date.now() - c.t < C.cacheMaxAgeMs) return c;
-  }catch(e){ /* ignore */ }
+  }catch(e){  }
   return null;
 }
 function writeCache(items){
-  try{ localStorage.setItem(C.cacheKey, JSON.stringify({ t: Date.now(), items })); }catch(e){ /* ignore */ }
+  try{ localStorage.setItem(C.cacheKey, JSON.stringify({ t: Date.now(), items })); }catch(e){  }
 }
 
-/* ---------- refresh loop ---------- */
 async function refresh(){
   if(busy) return;
   busy = true;

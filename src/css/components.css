@@ -1,6 +1,3 @@
-/* ============================================================
-   LIQUID GLASS — core surface treatment reused everywhere.
-   ============================================================ */
 .glass{
   position: relative;
   background: var(--glass-fill);
@@ -32,9 +29,6 @@
 .glass-md{ border-radius: var(--r-md); }
 .glass-sm{ border-radius: var(--r-sm); }
 
-/* ============================================================
-   HEADER
-   ============================================================ */
 #header{
   position: fixed;
   top: calc(20px + var(--safe-t));
@@ -64,9 +58,6 @@
   white-space: nowrap;
 }
 
-/* ============================================================
-   WELCOME CARD
-   ============================================================ */
 .welcome-card{
   padding: 22px 24px;
   max-width: 230px;
@@ -90,9 +81,6 @@
   line-height: 1.55;
 }
 
-/* ============================================================
-   CLOCK
-   ============================================================ */
 .clock-wrap{
   display: flex; flex-direction: column; align-items: center;
   text-align: center;
@@ -131,9 +119,6 @@
   padding: 6px 16px;
 }
 
-/* ============================================================
-   APP WIDGETS (preview stack)
-   ============================================================ */
 .widget-stack{
   display: flex; flex-direction: column; gap: 10px;
   width: 220px;
@@ -160,9 +145,6 @@
 .widget-name{ font-size: 13.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .widget-kind{ font-size: 11px; color: var(--ink-faint); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-/* ============================================================
-   GESTURE HINTS
-   ============================================================ */
 .hint{
   position: absolute;
   display: flex; align-items: center; gap: 7px;
@@ -188,11 +170,10 @@
   flex-direction: column;
   text-align: center;
 }
-/* ---- mobile page indicator: active = pill, others = circles ---- */
 #pager{
   display: none;
   position: absolute;
-  bottom: calc(86px + var(--safe-b));   /* just above the drawer opener */
+  bottom: calc(86px + var(--safe-b));
   left: 50%; transform: translateX(-50%);
   align-items: center;
   padding: 0 8px;
@@ -206,7 +187,7 @@ body.drawer-open #pager{ opacity: 0; pointer-events: none; }
 
 .pager-dot{
   border: none; background: none;
-  padding: 9px 4px;               /* generous tap target, small visual */
+  padding: 9px 4px;
   cursor: pointer;
   display: flex; align-items: center;
 }
@@ -225,9 +206,6 @@ body.drawer-open #pager{ opacity: 0; pointer-events: none; }
   .pager-dot::after{ transition: none; }
 }
 
-/* ============================================================
-   DRAWER OPENER (bottom center)
-   ============================================================ */
 #drawer-opener{
   position: fixed;
   bottom: calc(28px + var(--safe-b));
@@ -246,9 +224,6 @@ body.drawer-open #pager{ opacity: 0; pointer-events: none; }
 #drawer-opener svg{ width: 20px; height: 20px; transition: transform 0.4s var(--ease-glass); }
 #drawer-opener.is-open svg{ transform: rotate(180deg); }
 
-/* ============================================================
-   SETTINGS OPENER
-   ============================================================ */
 #settings-opener{
   position: fixed;
   bottom: calc(28px + var(--safe-b));
@@ -268,9 +243,6 @@ body.drawer-open #pager{ opacity: 0; pointer-events: none; }
 #settings-opener.is-open svg{ transform: rotate(90deg); }
 body.drawer-open #settings-opener{ opacity: 0; pointer-events: none; transform: translateX(-50%) translateY(20px); }
 
-/* ============================================================
-   BRIGHTNESS OVERLAY
-   ============================================================ */
 #brightness-overlay{
   position: fixed; inset: 0;
   background: #000;
@@ -280,9 +252,6 @@ body.drawer-open #settings-opener{ opacity: 0; pointer-events: none; transform: 
   transition: opacity 0.15s linear;
 }
 
-/* ============================================================
-   SETTINGS PANEL
-   ============================================================ */
 #settings-panel{
   position: fixed;
   top: 0; left: 50%;

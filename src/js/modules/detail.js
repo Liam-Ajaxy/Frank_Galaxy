@@ -55,7 +55,6 @@ export function initDetailEvents(){
   detailCloseBtn.addEventListener("click", closeDetail);
   detailScrim.addEventListener("click", closeDetail);
 
-  // delegate: any app icon anywhere (widgets, drawer grid) opens detail
   document.addEventListener("click", (e) => {
     const trigger = e.target.closest("[data-app-id]");
     if(!trigger) return;

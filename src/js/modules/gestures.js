@@ -5,15 +5,14 @@ import { openSettings, closeSettings } from "./settings.js";
 import { isDetailOpen, closeDetail } from "./detail.js";
 import { mobilePanelStep } from "./mobilePanels.js";
 
-const STAGE_THRESHOLD = 46;   // wheel delta to trigger
-const SWIPE_THRESHOLD = 58;   // px touch delta to trigger
+const STAGE_THRESHOLD = 46;
+const SWIPE_THRESHOLD = 58;
 let wheelLock = false;
 
 function isMobileLayout(){
   return window.matchMedia("(max-width: 860px)").matches;
 }
 
-/* ---- shared gesture arbiter: one step closes, the NEXT step opens ---- */
 function handleHomeGesture(direction){
   if(direction === "up"){
     if(state.settingsOpen){ closeSettings(); return; }
@@ -26,7 +25,6 @@ function handleHomeGesture(direction){
   }
 }
 
-/* ---- touch state (module-local, not global) ---- */
 let touchStartX = 0, touchStartY = 0, touchActive = false, touchIntent = null;
 
 function onTouchStart(e){
@@ -66,7 +64,6 @@ function onTouchEnd(e){
 }
 
 export function initGestures(){
-  /* ---- wheel (desktop / trackpad) ---- */
   window.addEventListener("wheel", (e) => {
     if(isDetailOpen()) return;
     if(wheelLock) return;
@@ -80,7 +77,6 @@ export function initGestures(){
     setTimeout(() => wheelLock = false, 650);
   }, { passive: true });
 
-  /* ---- keyboard ---- */
   document.addEventListener("keydown", (e) => {
     if(e.key === "Escape"){
       if(state.detailOpen || isDetailOpen()) closeDetail();
@@ -88,7 +84,6 @@ export function initGestures(){
     }
   });
 
-  /* ---- touch: home stage handles vertical (drawer/settings) + horizontal (panels) ---- */
   const settingsPanelEl = document.getElementById("settings-panel");
   const drawerEl = document.getElementById("drawer");
 

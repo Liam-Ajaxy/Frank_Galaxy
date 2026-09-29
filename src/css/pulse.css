@@ -1,6 +1,3 @@
-/* ============================================================
-   LIVE PULSE — stocks + news auto-scroller (liquid glass)
-   ============================================================ */
 :root{
   --pulse-up: #c634d3;
   --pulse-down: var(--nova-rose);
@@ -10,7 +7,6 @@
   --pulse-down: #D6336C;
 }
 
-/* welcome card + pulse card stacked as one column */
 .welcome-stack{
   display: flex; flex-direction: column; gap: 12px;
   width: 100%; max-width: 250px;
@@ -44,7 +40,6 @@
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 
-/* scrolling window */
 .pulse-viewport{
   position: relative;
   height: 210px;
@@ -63,7 +58,6 @@
 .pulse-viewport:active .pulse-track{ animation-play-state: paused; }
 @keyframes pulse-scroll{ from{ transform: translateY(0); } to{ transform: translateY(-50%); } }
 
-/* margin (not gap) so the -50% loop lands exactly on the duplicate */
 .pulse-item{ margin-bottom: 8px; }
 .pulse-link{
   display: flex; flex-direction: column; gap: 3px;

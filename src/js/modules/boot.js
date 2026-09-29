@@ -3,7 +3,6 @@ import { bootEl, appEl, bgEl } from "./dom.js";
 
 function revealApp(onReady){
   bgEl.style.setProperty("--bg-image", `url("${DEFAULT_BACKGROUND_DATA_URL}")`);
-  // force one frame so the background paints before we drop the boot screen
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       bootEl.classList.add("hidden");
@@ -23,7 +22,7 @@ export function preloadBackground(onReady){
     img.decode().then(finish).catch(finish);
   } else {
     img.onload = finish;
-    img.onerror = finish; // fail-open rather than stranding the user on boot forever
+    img.onerror = finish;
     img.src = DEFAULT_BACKGROUND_DATA_URL;
   }
 }

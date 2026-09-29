@@ -1,18 +1,13 @@
-/* ============================================================
-   FEED CONFIG
-   Everything tunable about the Live Pulse widget lives here.
-   ============================================================ */
 export const PULSE_CONFIG = {
   refreshMs: 5 * 60 * 1000,
   retryMs: 60 * 1000,
   timeoutMs: 8000,
   newsPerSource: 6,
-  quotesPerNews: 2,               // 1 quote after every N headlines
+  quotesPerNews: 2,
   cacheKey: "frankgalaxy.pulse",
   cacheMaxAgeMs: 30 * 60 * 1000
 };
 
-/* label = what shows in the card; index = true -> plain number, no $ */
 export const STOCKS = [
   { symbol: "AAPL",  label: "AAPL" },
   { symbol: "MSFT",  label: "MSFT" },
@@ -30,7 +25,6 @@ export const CRYPTO = [
 export const ENDPOINTS = {
   yahooChart: s =>
     `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(s)}?range=1d&interval=1d`,
-  // tried in order; Yahoo does not send CORS headers itself
   proxies: [
     u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
     u => `https://corsproxy.io/?url=${encodeURIComponent(u)}`

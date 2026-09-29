@@ -1,11 +1,5 @@
 import { welcomeEyebrowD, welcomeLineD, welcomeEyebrowM, welcomeLineM } from "./dom.js";
 
-/* ============================================================
-   TIME MOODS
-   `until` is exclusive (hour < until). Slots are checked in order.
-   Add lines freely — one is picked per day+hour, so it stays
-   stable between refreshes but varies across days.
-   ============================================================ */
 const MOODS = [
   { until: 5,  eyebrow: "Late orbit",     lines: [
     "Still up? The galaxy keeps watch.",
