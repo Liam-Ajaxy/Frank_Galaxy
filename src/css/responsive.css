@@ -1,0 +1,11 @@
+@media (max-width: 860px){
+  .clock-date{ padding: 4px 0 0; }
+  .drawer-title{ font-size: 19px; }
+  .search-field{ width: 100%; max-width: none; order: 3; }
+  .drawer-topbar{ gap: 10px; }
+  #drawer-inner{ padding-left: 18px; padding-right: 18px; }
+}
+@media (max-width: 420px){
+  .app-grid{ grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap: 18px 6px; }
+  .app-icon{ width: 52px; height: 52px; border-radius: 15px; }
+}

@@ -1,0 +1,141 @@
+/* ============================================================
+   APP DATA
+   Real links as provided. Anything marked pending has no live
+   URL/icon yet — the UI shows it truthfully as "coming soon"
+   rather than faking a link, and uses the placeholder glyph
+   rather than a fake brand icon.
+   ============================================================ */
+export const APPS = [
+  {
+    id: "hia-exe",
+    name: "HIA Dashboard",
+    kind: "Desktop app",
+    category: "Frank's apps",
+    sub: "EXE",
+    desc: "Windows executable build of the HIA Dashboard.",
+    url: "https://github.com/Liam-Ajaxy/HIA-Dashboard/releases/download/v1.0.0/HIA.Dashboard.Setup.1.0.2.exe",
+    iconType: "symbol",
+    icon: "icon-dashboard",
+    iconBg: "linear-gradient(145deg, rgba(91,140,255,0.28), rgba(91,140,255,0.06))",
+    pending: false
+  },
+  {
+    id: "hia-portable",
+    name: "HIA Dashboard",
+    kind: "Desktop app",
+    category: "Frank's apps",
+    sub: "Portable",
+    desc: "Portable build of the HIA Dashboard — no install required.",
+    url: "https://github.com/Liam-Ajaxy/HIA-Dashboard/releases/download/v1.0.0/HIA-Desktop-Portable.exe",
+    iconType: "symbol",
+    icon: "icon-dashboard",
+    iconBg: "linear-gradient(145deg, rgba(91,140,255,0.2), rgba(91,140,255,0.05))",
+    pending: false
+  },
+  {
+    id: "frank-player",
+    name: "Frank Player",
+    kind: "Android app",
+    category: "Frank's apps",
+    sub: "Kotlin",
+    desc: "Media player for Android, built natively with Kotlin.",
+    url: "https://github.com/Liam-Ajaxy/Frank-Player/releases/download/v1.0.0/Frank.Player.apk",
+    iconType: "symbol",
+    icon: "icon-player",
+    iconBg: "linear-gradient(145deg, rgba(255,107,155,0.28), rgba(255,107,155,0.06))",
+    pending: true
+  },
+  {
+    id: "frankport-v1",
+    name: "FrankPort",
+    kind: "Website",
+    category: "Websites",
+    sub: "v1",
+    desc: "Frank's original portfolio site.",
+    url: "https://frankport.vercel.app",
+    iconType: "symbol",
+    icon: "icon-frankport",
+    iconBg: "linear-gradient(145deg, rgba(91,140,255,0.26), rgba(155,107,255,0.1))",
+    pending: false
+  },
+  {
+    id: "frankport-v2",
+    name: "FrankPort",
+    kind: "Website",
+    category: "Websites",
+    sub: "v2 · AI",
+    desc: "AI-driven rebuild — a collection of Frank's AI agents working alongside Frank AI.",
+    url: "https://frankport.pages.dev",
+    iconType: "symbol",
+    icon: "icon-frankport",
+    iconBg: "linear-gradient(145deg, rgba(155,107,255,0.3), rgba(255,107,155,0.1))",
+    pending: false
+  },
+  {
+    id: "frankly",
+    name: "Frankly",
+    kind: "Website",
+    category: "Websites",
+    sub: "Messaging",
+    desc: "Real-time messaging with live news updates.",
+    url: "https://frankly.pages.dev/login",
+    iconType: "symbol",
+    icon: "icon-frankly",
+    iconBg: "linear-gradient(145deg, rgba(255,155,84,0.28), rgba(255,155,84,0.06))",
+    pending: false
+  },
+  {
+    id: "frank-ai",
+    name: "Frank AI",
+    kind: "Website",
+    category: "Websites",
+    sub: "Agent",
+    desc: "Frank's own AI assistant, on the web.",
+    url: "https://frankport.pages.dev/#/frankai",
+    iconType: "symbol",
+    icon: "icon-frank-ai",
+    iconBg: "linear-gradient(145deg, rgba(155,107,255,0.3), rgba(91,140,255,0.08))",
+    pending: false
+  },
+  {
+    id: "github",
+    name: "GitHub",
+    kind: "Profile",
+    category: "Connect",
+    sub: "Liam-Ajaxy",
+    desc: "Frank's GitHub profile — code and repositories.",
+    url: "https://github.com/Liam-Ajaxy",
+    iconType: "symbol",
+    icon: "icon-github",
+    iconBg: "#161B22",
+    pending: false
+  },
+  {
+    id: "whatsapp",
+    name: "WhatsApp",
+    kind: "Direct chat",
+    category: "Connect",
+    sub: "+250 794 359 825",
+    desc: "Message Frank directly on WhatsApp.",
+    url: "https://wa.me/250794359825",
+    iconType: "symbol",
+    icon: "icon-whatsapp",
+    iconBg: "#25D366",
+    pending: false
+  },
+  {
+    id: "phone",
+    name: "Call",
+    kind: "Phone",
+    category: "Connect",
+    sub: "+250 794 359 825",
+    desc: "Call Frank directly.",
+    url: "tel:+250794359825",
+    iconType: "symbol",
+    icon: "icon-phone",
+    iconBg: "linear-gradient(145deg, #34D399, #0EA968)",
+    pending: false
+  }
+];
+
+export const CATEGORIES = ["All", "Frank's apps", "Websites", "Connect"];

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Frank Galaxy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Manrope:wght@300..800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="src/css/tokens.css">
+<link rel="stylesheet" href="src/css/base.css">
+<link rel="stylesheet" href="src/css/layout.css">
+<link rel="stylesheet" href="src/css/components.css">
+<link rel="stylesheet" href="src/css/pulse.css">
+<link rel="stylesheet" href="src/css/drawer.css">
+<link rel="stylesheet" href="src/css/detail.css">
+<link rel="stylesheet" href="src/css/responsive.css">
+</head>
+<body>
+
+<!-- BOOT SCREEN — visible until bg image finishes decoding -->
+<div id="boot">
+  <div class="boot-ring" aria-hidden="true"></div>
+  <div class="boot-mark"><span class="boot-word">FRANK GALAXY</span></div>
+</div>
+
+<div id="app">
+  <div id="bg" role="img" aria-label="Deep space nebula with Earth"></div>
+
+  <!-- ============ HEADER ============ -->
+  <header id="header">
+    <div id="logo-pill" class="glass glass-pill">
+      <span class="logo-glyph" aria-hidden="true"></span>
+      <span class="logo-word">Frank Galaxy</span>
+    </div>
+  </header>
+
+  <!-- ============ STAGE (home content) ============ -->
+  <main id="stage">
+    <div id="home">
+
+      <!-- ---------- DESKTOP / WIDE GRID ---------- -->
+      <div class="desktop-grid">
+        <div class="col-side col-left">
+          <div class="welcome-stack">
+            <div class="glass glass-lg welcome-card">
+              <span class="welcome-eyebrow" id="welcome-eyebrow">Good evening</span>
+              <p class="welcome-line" id="welcome-line">Welcome to Frank's galaxy.</p>
+              <p class="welcome-sub">Your builds, agents and links all in one orbit.</p>
+            </div>
+            <div id="pulse-mount-d"></div>
+          </div>
+        </div>
+
+        <div class="col-center">
+          <div class="clock-wrap">
+            <div class="clock-time" id="clock-time-d">--:--</div>
+            <div class="glass glass-pill clock-date" id="clock-date-d">--</div>
+          </div>
+        </div>
+
+        <div class="col-side col-right">
+          <div class="widget-stack" id="widget-stack-d"></div>
+        </div>
+      </div>
+
+      <!-- ---------- MOBILE / SWIPE TRACK ---------- -->
+      <div class="mobile-track" id="mobile-track">
+        <div class="mobile-panel" id="panel-welcome" data-panel="welcome">
+          <div class="welcome-stack">
+            <div class="glass glass-lg welcome-card">
+              <span class="welcome-eyebrow" id="welcome-eyebrow-m">Good evening</span>
+              <p class="welcome-line" id="welcome-line-m">Welcome to Frank's galaxy.</p>
+              <p class="welcome-sub">Your builds, agents and links all in one orbit.</p>
+            </div>
+            <div id="pulse-mount-m"></div>
+          </div>
+        </div>
+        <div class="mobile-panel" id="panel-clock" data-panel="clock">
+          <div class="clock-wrap">
+            <div class="clock-time" id="clock-time-m" style="font-size:clamp(52px,17vw,86px)">--:--</div>
+            <div class="glass glass-pill clock-date" id="clock-date-m">--</div>
+          </div>
+        </div>
+        <div class="mobile-panel" id="panel-widgets" data-panel="widgets">
+          <div class="widget-stack" id="widget-stack-m"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- gesture hints -->
+    <div class="hint" id="hint-drawer">
+      <svg class="hint-arrow up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      <span>Swipe up for apps</span>
+    </div>
+    <div class="glass glass-pill" id="pager" role="tablist" aria-label="Home panels">
+      <button class="pager-dot" data-panel="welcome" role="tab" aria-label="Welcome panel"></button>
+      <button class="pager-dot" data-panel="clock" role="tab" aria-label="Clock panel"></button>
+      <button class="pager-dot" data-panel="widgets" role="tab" aria-label="Widgets panel"></button>
+    </div>
+  </main>
+
+  <!-- ============ SETTINGS OPENER ============ -->
+  <button id="settings-opener" class="glass glass-pill" aria-label="Open settings" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
+  </button>
+
+  <!-- ============ DRAWER OPENER ============ -->
+  <button id="drawer-opener" class="glass glass-pill" aria-label="Open app drawer" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="2" fill="currentColor"/><circle cx="12" cy="6" r="2" fill="currentColor"/><circle cx="18" cy="6" r="2" fill="currentColor"/><circle cx="6" cy="12" r="2" fill="currentColor"/><circle cx="12" cy="12" r="2" fill="currentColor"/><circle cx="18" cy="12" r="2" fill="currentColor"/><circle cx="6" cy="18" r="2" fill="currentColor"/><circle cx="12" cy="18" r="2" fill="currentColor"/><circle cx="18" cy="18" r="2" fill="currentColor"/></svg>
+  </button>
+
+  <!-- ============ APP DRAWER ============ -->
+  <div id="drawer" aria-hidden="true">
+    <div id="drawer-scrim"></div>
+    <div id="drawer-sheet" class="glass-strong" role="dialog" aria-label="App drawer" aria-modal="true">
+      <div id="drawer-inner">
+        <div class="drawer-topbar">
+          <button class="drawer-back" id="drawer-back" aria-label="Close app drawer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </button>
+          <h2 class="drawer-title">Apps</h2>
+          <span class="drawer-count" id="drawer-count">0 apps</span>
+          <div class="search-field glass glass-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" id="app-search" placeholder="Search apps" autocomplete="off" aria-label="Search apps">
+          </div>
+          <div class="sort-field" id="sort-field">
+            <button class="sort-btn glass glass-pill" id="sort-btn" aria-haspopup="true" aria-expanded="false">
+              <span id="sort-label">Name</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="sort-menu glass glass-md" id="sort-menu" role="menu"></div>
+          </div>
+        </div>
+
+        <div class="category-tabs" id="category-tabs"></div>
+
+        <div id="drawer-grid-scroll">
+          <div class="app-grid" id="app-grid"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ BRIGHTNESS OVERLAY ============ -->
+  <div id="brightness-overlay" aria-hidden="true"></div>
+
+  <!-- ============ SETTINGS PANEL ============ -->
+  <div id="settings-scrim"></div>
+  <div id="settings-panel" class="glass-strong glass-lg" role="dialog" aria-label="Settings" aria-hidden="true">
+    <div id="settings-inner">
+      <div class="settings-title">
+        Settings
+        <button class="settings-close" id="settings-close" aria-label="Close settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="settings-block">
+        <span class="settings-label">Appearance</span>
+        <div class="theme-row" id="theme-row">
+          <button class="theme-opt" data-theme="dark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+            Dark
+          </button>
+          <button class="theme-opt" data-theme="light">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            Light
+          </button>
+          <button class="theme-opt" data-theme="system">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            System
+          </button>
+        </div>
+      </div>
+
+      <div class="settings-block">
+        <span class="settings-label">Brightness</span>
+        <div class="brightness-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <div class="brightness-track" id="brightness-track">
+            <div class="brightness-fill" id="brightness-fill"></div>
+            <input type="range" id="brightness-slider" min="35" max="100" value="100" aria-label="Screen brightness">
+          </div>
+        </div>
+      </div>
+
+      <div class="settings-block">
+        <span class="settings-label">Wallpaper</span>
+        <div class="wallpaper-grid" id="wallpaper-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ APP DETAIL SHEET ============ -->
+  <div id="detail" aria-hidden="true">
+    <div id="detail-scrim"></div>
+    <div id="detail-card" class="glass-strong glass-lg" role="dialog" aria-modal="true" aria-labelledby="detail-name">
+      <button id="detail-close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+      <div class="detail-icon" id="detail-icon"></div>
+      <div>
+        <h3 class="detail-name" id="detail-name">—</h3>
+        <div class="detail-kind" id="detail-kind">—</div>
+      </div>
+      <p class="detail-desc" id="detail-desc"></p>
+      <div class="detail-actions">
+        <a class="detail-btn detail-btn-primary" id="detail-open-btn" href="#" target="_blank" rel="noopener noreferrer">
+          <span id="detail-btn-label">Open</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============================================================
+     ICON LIBRARY — inline SVG defs, reused by id via <use>
+     ============================================================ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+
+  <symbol id="icon-github" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 .5C5.73.5.5 5.73.5 12.02c0 5.05 3.28 9.33 7.83 10.84.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.19.69-3.86-1.36-3.86-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.33.95.1-.74.4-1.25.73-1.54-2.55-.29-5.23-1.27-5.23-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 2.87-.39c.97.01 1.95.13 2.87.39 2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.08 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14 0 1.54-.01 2.79-.01 3.17 0 .3.2.66.79.55A10.53 10.53 0 0 0 23.5 12.02C23.5 5.73 18.27.5 12 .5Z"/>
+  </symbol>
+
+  <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.48-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+    <path fill="currentColor" d="M12.02 0C5.4 0 .02 5.35.02 11.94c0 2.11.55 4.16 1.6 5.97L0 24l6.24-1.63a11.9 11.9 0 0 0 5.77 1.47h.01c6.6 0 11.98-5.35 11.98-11.94C24 5.35 18.62 0 12.02 0Zm0 21.82h-.01c-1.8 0-3.58-.48-5.13-1.4l-.37-.22-3.7.97.99-3.62-.24-.37a9.87 9.87 0 0 1-1.52-5.24C1.04 6.47 5.96 1.6 12.02 1.6c2.64 0 5.11 1.03 6.98 2.9a9.79 9.79 0 0 1 2.89 6.96c0 6.06-4.98 10.97-10.87 10.97Z"/>
+  </symbol>
+
+  <symbol id="icon-phone" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z"/>
+  </symbol>
+
+  <symbol id="icon-placeholder" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 16v-1.5c0-1 3-1.5 3-3.5a3 3 0 1 0-6 0"/>
+    <circle cx="12" cy="19.2" r="0.9" fill="currentColor"/>
+  </symbol>
+
+  <symbol id="icon-frank-ai" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 2.5c.5 3.6 1.4 5.9 3 7.5s3.9 2.5 7.5 3c-3.6.5-5.9 1.4-7.5 3s-2.5 3.9-3 7.5c-.5-3.6-1.4-5.9-3-7.5S5.1 13.5 1.5 13c3.6-.5 5.9-1.4 7.5-3s2.5-3.9 3-7.5Z"/>
+  </symbol>
+
+  <symbol id="icon-dashboard" viewBox="0 0 24 24">
+    <rect x="3" y="3" width="8" height="10" rx="2" fill="currentColor" opacity="0.95"/>
+    <rect x="13" y="3" width="8" height="6" rx="2" fill="currentColor" opacity="0.6"/>
+    <rect x="13" y="11" width="8" height="10" rx="2" fill="currentColor" opacity="0.8"/>
+    <rect x="3" y="15" width="8" height="6" rx="2" fill="currentColor" opacity="0.45"/>
+  </symbol>
+
+  <symbol id="icon-player" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9.2" fill="currentColor" opacity="0.16"/>
+    <path fill="currentColor" d="M10 8.3v7.4c0 .6.66.96 1.17.64l5.9-3.7a.75.75 0 0 0 0-1.28l-5.9-3.7A.75.75 0 0 0 10 8.3Z"/>
+  </symbol>
+
+  <symbol id="icon-frankport" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 1 3 5.5v6.9C3 17.9 6.8 22.3 12 23c5.2-.7 9-5.1 9-10.6V5.5L12 1Zm0 2.24 6.5 3.25v4.9c0 4.2-2.78 7.6-6.5 8.35-3.72-.75-6.5-4.15-6.5-8.35v-4.9L12 3.24Z"/>
+    <path fill="currentColor" d="M11 8h2v5h-2zM11 15h2v2h-2z"/>
+  </symbol>
+
+  <symbol id="icon-frankly" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-5 4V5a1 1 0 0 1 1-1Z" opacity="0.92"/>
+    <circle cx="8" cy="10" r="1.15" fill="var(--bg-void)"/>
+    <circle cx="12" cy="10" r="1.15" fill="var(--bg-void)"/>
+    <circle cx="16" cy="10" r="1.15" fill="var(--bg-void)"/>
+  </symbol>
+
+</defs>
+</svg>
+
+<script type="module" src="src/js/app.js"></script>
+</body>
+</html>

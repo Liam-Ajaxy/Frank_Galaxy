@@ -1,0 +1,54 @@
+/* ============================================================
+   VIEWPORT / PANEL TRACK
+   ============================================================ */
+#home{
+  position: absolute; inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.desktop-grid{
+  display: grid;
+  grid-template-columns: minmax(200px, 300px) minmax(340px, 1fr) minmax(200px, 300px);
+  align-items: center;
+  width: min(1180px, 92vw);
+  gap: 28px;
+}
+.col-side{ display: flex; }
+.col-left{ justify-content: flex-start; }
+.col-right{ justify-content: flex-end; }
+.col-center{ display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
+
+.mobile-track{
+  display: none;
+  position: relative;
+  width: 100%; height: 100%;
+}
+.mobile-panel{
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 0 26px;
+  transition: transform 0.55s var(--ease-glass), opacity 0.55s var(--ease-glass);
+}
+
+@media (max-width: 860px){
+  .desktop-grid{ display: none; }
+  .mobile-track{ display: block; }
+}
+
+/* ============================================================
+   DEPTH / FOCUS FILTER
+   ============================================================ */
+#home, #header, #drawer-opener{
+  transition: filter 0.55s var(--ease-glass), opacity 0.55s var(--ease-glass), transform 0.55s var(--ease-glass);
+  filter: blur(0px) saturate(100%);
+}
+body.drawer-open #home{ filter: blur(3px) saturate(85%); opacity: 0.5; }
+body.drawer-open #drawer-opener{ opacity: 0; pointer-events: none; transform: translateX(-50%) translateY(20px); }
+body.detail-open #stage, body.detail-open #drawer-sheet{ filter: blur(2.5px) saturate(88%); }
+
+a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible{
+  outline: 2px solid rgba(155,180,255,0.85);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
